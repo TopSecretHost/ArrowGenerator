@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Arrow Customizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="controls">
+        <label for="arrowColor">Arrow Color: </label>
+        <input type="color" id="arrowColor" name="arrowColor" value="#db5862">
+        <label for="pathColor">Path Color: </label>
+        <input type="color" id="pathColor" name="pathColor" value="#db5862">
+        <label for="pathWidth">Path Width: </label>
+        <input type="number" id="pathWidth" name="pathWidth" value="5" min="1">
+        <label for="arrowSize">Arrow Size: </label>
+        <input type="number" id="arrowSize" name="arrowSize" value="18" min="1">
+        <label for="pathDuration">Path Animation Duration (s): </label>
+        <input type="number" id="pathDuration" name="pathDuration" value="3" min="1">
+        <label for="arrowDuration">Arrow Animation Duration (s): </label>
+        <input type="number" id="arrowDuration" name="arrowDuration" value="1.6" min="0.5">
+        <button onclick="applyChanges()">Apply Changes</button>
+        <button onclick="resetAnimation()">Reset Animation</button>
+        <button onclick="exportCode()">Export Code</button>
+    </div>
+    <div class="graph__wrapper">
+        <svg id="svgElement" width="315px" height="107px" viewBox="0 0 315 107" version="1.1" style="overflow:visible">
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+                <path id="Path-1" class="path" fill="none" stroke="#db5862" stroke-width="5" stroke-linejoin="round" stroke-miterlimit="10" d="M1.4,2.1c0,0,86,57,211.5,41.5s172.5-24.5,289,81"/>
+                <path class="dashed" fill="none" stroke="white" stroke-width="8" stroke-linejoin="round" stroke-miterlimit="10" d="M1.4,2.1c0,0,86,57,211.5,41.5s172.5-24.5,289,81"/>   
+                <polyline id="arrow" points="0,-9 18,0 0,9 5,0" fill="#db5862">
+                    <animateMotion id="animateArrow" rotate="auto" begin="1s" dur="1.6s" repeatCount="1" fill="freeze">
+                        <mpath xlink:href="#Path-1" />
+                    </animateMotion>
+                </polyline>
+            </g>
+        </svg>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
